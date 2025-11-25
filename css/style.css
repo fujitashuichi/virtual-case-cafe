@@ -3,6 +3,11 @@
     sp < 481px < tablet < 960px < pc
 */
 
+@font-face {
+    font-family: "Dancing Script";
+    src: url("../fonts/DancingScript-VariableFont_wght.ttf");
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -19,6 +24,8 @@ body {
     background-color: #fff;
     color: var(--text-color);
     font-family: "ヒラギノ角ゴ ProN W3", "メイリオ", Meiryo, sans-serif;
+    line-height: 1.8;
+    letter-spacing: 0.1rem;
 }
 
 ul {
@@ -33,11 +40,11 @@ a {
 
 #header {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
-    height: 150px;
+    height: fit-content;
     background-color: var(--main-color);
-    padding: 30px 4% 0 4%;
+    padding: 30px 4%;
 }
 
 #header .site-logo {
@@ -47,9 +54,36 @@ a {
     color: var(--accent-color);
     padding: 5px 15px;
     line-height: 1.4;
+    font-family: "Dancing Script";
+}
+
+#header #hamburger-menu-btn {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border: 1px #000 solid;
+    margin: 0 0 0 auto;
+}
+#header #hamburger-menu-btn span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 0;
+    border: 1px solid var(--accent-color);
+}
+#header #hamburger-menu-btn span:first-of-type {
+    transform: translate(-50%, -10px);
+}
+#header #hamburger-menu-btn span:nth-last-of-type(2) {
+    transform: translate(-50%, 0);
+}
+#header #hamburger-menu-btn span:last-of-type {
+    transform: translate(-50%, 10px);
 }
 
 #header #global-nav {
+    display: none;
     width: 100%;
     height: fit-content;
     margin: auto 0 0 0;
@@ -71,6 +105,8 @@ a {
 
 
 #hero {
+    position: relative;
+    display: flex;
     width: 100%;
     height: calc(100vh - 150px);
     background-image: url("../img/main-visual.jpg");
@@ -81,4 +117,25 @@ a {
     #hero {
         background-position: center;
     }
+}
+#hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0000000f;
+    background:
+        linear-gradient(0deg, #00000055, #00000000, #00000055),
+        linear-gradient(90deg, #00000022, #00000000, #00000022)
+    ;
+}
+
+#hero #hero-title {
+    text-align: center;
+    text-shadow: #000 1px 2px;
+    color: var(--accent-color);
+    margin: auto;
+    z-index: 1;
 }
