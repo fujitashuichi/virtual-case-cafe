@@ -1,0 +1,10 @@
+/* sp first */
+/*
+    sp < 481px < tablet < 960px < pc
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
