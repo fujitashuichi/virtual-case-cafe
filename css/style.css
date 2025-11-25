@@ -8,3 +8,15 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+:root {
+    --main-color: #2f4f4f;
+    --accent-color: #f5f5dc;
+    --font-color: #333;
+}
+
+
+body {
+    background-color: #fff;
+    font-family: "ヒラギノ角ゴ ProN W3", "メイリオ", Meiryo, sans-serif;
+}
