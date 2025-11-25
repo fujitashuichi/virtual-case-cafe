@@ -9,9 +9,30 @@
         height: 150px;
         padding: 30px 4% 0 4%;
     }
+    #hero {
+        height: calc(100vh - 150px);
+    }
+
+    #header #hamburger-menu-btn {
+        display: none;
+    }
 
     #header #global-nav {
-        display: block;
+        position: relative;
+        left: 0;
+        width: 100%;
+        height: fit-content;
+        margin: auto 0 0 0;
+        padding: 0 0 15px 0;
+    }
+    #header #global-nav ul {
+        flex-direction: row;
+        padding: 0;
+    }
+    #header #global-nav ul li {
+        width: calc(100% / 3);
+        font-size: 0.7rem;
+        margin-bottom: 0;
     }
 }
 

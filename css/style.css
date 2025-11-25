@@ -5,7 +5,7 @@
 
 @font-face {
     font-family: "Dancing Script";
-    src: url("../fonts/DancingScript-VariableFont_wght.ttf");
+    src: url("../fonts/DancingScript/DancingScript-VariableFont_wght.ttf");
 }
 
 * {
@@ -26,6 +26,7 @@ body {
     font-family: "ヒラギノ角ゴ ProN W3", "メイリオ", Meiryo, sans-serif;
     line-height: 1.8;
     letter-spacing: 0.1rem;
+    overflow-x: hidden;
 }
 
 ul {
@@ -42,7 +43,7 @@ a {
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: fit-content;
+    height: 110px;
     background-color: var(--main-color);
     padding: 30px 4%;
 }
@@ -63,6 +64,7 @@ a {
     height: 50px;
     border: 1px #000 solid;
     margin: 0 0 0 auto;
+    z-index: 10;
 }
 #header #hamburger-menu-btn span {
     position: absolute;
@@ -71,6 +73,7 @@ a {
     width: 30px;
     height: 0;
     border: 1px solid var(--accent-color);
+    transition: all 0.3s;
 }
 #header #hamburger-menu-btn span:first-of-type {
     transform: translate(-50%, -10px);
@@ -81,21 +84,41 @@ a {
 #header #hamburger-menu-btn span:last-of-type {
     transform: translate(-50%, 10px);
 }
+#header #hamburger-menu-btn.open span:first-of-type {
+    transform: translate(-50%, 0) rotateZ(45deg);
+}
+#header #hamburger-menu-btn.open span:nth-of-type(2) {
+    width: 0;
+}
+#header #hamburger-menu-btn.open span:last-of-type {
+    transform: translate(-50%, 0) rotateZ(-45deg);
+}
 
 #header #global-nav {
-    display: none;
+    position: fixed;
+    top: 0;
+    left: 100%;
     width: 100%;
-    height: fit-content;
-    margin: auto 0 0 0;
+    height: 100vh;
     padding: 0 0 15px 0;
+    transition: all 0.3s;
+}
+#header #global-nav.open {
+    left: 0;
+    backdrop-filter: blur(10px);
+    z-index: 5;
 }
 #header #global-nav ul {
-    width: 100%;
     display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 100px 0;
 }
 #header #global-nav ul li {
     display: flex;
-    width: calc(100% / 3);
+    width: 100%;
+    margin-bottom: 25px;
+    font-size: 1.5rem;
 }
 
 #header #global-nav a {
@@ -108,7 +131,7 @@ a {
     position: relative;
     display: flex;
     width: 100%;
-    height: calc(100vh - 150px);
+    height: calc(100vh - 100px);
     background-image: url("../img/main-visual.jpg");
     background-position: 50% calc(50% - 120px);
     background-size: cover;
@@ -138,4 +161,15 @@ a {
     color: var(--accent-color);
     margin: auto;
     z-index: 1;
+}
+
+
+.section-header {
+    display: flex;
+    padding: 100px 0 0 0;
+}
+.section-header .section-title {
+    margin: 0 auto;
+    font-family: "Dancing Script";
+    font-weight: bold;
 }
