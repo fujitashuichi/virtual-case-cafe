@@ -34,6 +34,11 @@
         font-size: 0.7rem;
         margin-bottom: 0;
     }
+
+    /* マウス操作のスクロール速度を考慮して、sticky直下の要素のpadding-topを大きくとる */
+    #about .about__text-wrapper {
+        padding: 150px 0 25px 0;
+    }
 }
 
 @media screen and (min-width: 960px) {
