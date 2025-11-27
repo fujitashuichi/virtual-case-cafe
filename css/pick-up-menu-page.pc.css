@@ -1,0 +1,24 @@
+@media screen and (min-width: 481px) {
+    #menu .menu__item {
+        flex-direction: row;
+    }
+    #menu .menu__item:nth-of-type(2n) {
+        flex-direction: row-reverse;
+    }
+
+    #menu .menu__item .img-wrapper {
+        max-width: 500px;
+        width: 50%;
+        aspect-ratio: 3 / 2;
+        padding: 0 7px;
+    }
+
+    #menu .menu__item .text-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 auto;
+        padding: 0 7px;
+        width: 50%;
+    }
+}
