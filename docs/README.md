@@ -49,3 +49,33 @@ About セクションの画像とテキストの交互配置、Menu & Plan のPC
 * モバイルファースト
 <br/>
 スマートフォンでの視認性・操作性を最優先した設計。
+
+# 実験的なCSS実装
+"おすすめドリンクメニュー"ページ内で、headerのテキストに以下のコードを実装しました。
+```
+<!-- pick-up-menu.html -->
+<h1>おすすめ<wbr/>ドリンクメニュー</h1>
+<p>専属バリスタがあなたの集中力をサポートする、特別な一杯をご提案します</p>
+
+/* pick-up-menu-page.css */
+#header h1,
+#header p {
+    word-break: auto-phrase;
+}
+```
+* テキスト折り返しの課題
+[wbr要素](https://developer.mozilla.org/ja/docs/Web/CSS/Guides/Text/Wrapping_breaking_text#wbr_%E8%A6%81%E7%B4%A0)だけでは、chromブラウザが意図した位置で改行を行う条件を満たしませんでした。(下図)
+![screen-shot01](./img/screen-shot01.png)
+overflow-wrapプロパティを変えるなどしましたが、どれも解決には至りませんでした。
+
+* word-break: auto-phrase; を適用
+[auto-phraseのブラウザ互換性](https://developer.mozilla.org/ja/docs/Web/CSS/Reference/Properties/word-break#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)は、現時点で一部のブラウザで非対応となっており、実験的な実装となりました。
+wbr要素無しでこのCSSを適用したところ、h1タグで意図した動作をしませんでした。(下図)
+![screen-shot02](./img/screen-shot02.png)
+
+* auto-phraseとwbr属性の併用
+タイトルでは、格助詞を省略しているため、"おすすめドリンクメニュー"が1文節として認識されていることが原因だと考えました。
+そこで、wbr要素を併用することで、文節ではなく、単語での改行を促すことができるのではないかと予想し実装しました。(下図)
+![screen-shot03](./img/screen-shot03.png)
+
+現時点では実験的な実装であるものの、「タイトルが半端に折り返す問題」を効率的に解消できるため、小ネタとして覚えておきたい機能であると感じました。
