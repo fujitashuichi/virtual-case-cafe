@@ -1,6 +1,9 @@
 # virtual-case-cafe
 AI生成の仮想案件によるコーディング練習
+
 [リンク](https://virtual-case-cafe.vercel.app/)
+
+SPファースト・最小限機能の店舗紹介サイトです。特に、指でのスムーズなスクロール操作に適しています。
 
 # 仮想案件の概要
 * [仮想案件.docx](./案件概要.docx)
