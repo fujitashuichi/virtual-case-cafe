@@ -73,13 +73,13 @@ overflow-wrapプロパティを変えるなどしましたが、どれも解決�
 * word-break: auto-phrase; を適用
 [auto-phraseのブラウザ互換性](https://developer.mozilla.org/ja/docs/Web/CSS/Reference/Properties/word-break#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)は、現時点で一部のブラウザで非対応となっており、実験的な実装となりました。
 wbr要素無しでこのCSSを適用したところ、h1タグで意図した動作をしませんでした。(下図)
-
+<br/>
 ![screen-shot02](./img/screen-shot02.png)
-
+<br/>
 * auto-phraseとwbr属性の併用
 タイトルでは、格助詞を省略しているため、"おすすめドリンクメニュー"が1文節として認識されていることが原因だと考えました。
 そこで、wbr要素を併用することで、文節ではなく、単語での改行を促すことができるのではないかと予想し実装しました。(下図)
-
+<br/>
 ![screen-shot03](./img/screen-shot03.png)
-
+<br/>
 現時点では実験的な実装であるものの、「タイトルが半端に折り返す問題」を効率的に解消できるため、小ネタとして覚えておきたい機能であると感じました。
