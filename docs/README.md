@@ -1,5 +1,6 @@
 # virtual-case-cafe
 AI生成の仮想案件によるコーディング練習
+[リンク](https://virtual-case-cafe.vercel.app/)
 
 # 仮想案件の概要
 * [仮想案件.docx](./案件概要.docx)
