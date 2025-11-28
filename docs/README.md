@@ -26,3 +26,23 @@ AI生成の仮想案件によるコーディング練習
 * 各種SNSアイコン: [Font Awesome](https://fontawesome.com/)
 
 * google fonts: [Dancing Script](https://fonts.google.com/specimen/Dancing+Script#how-to-use)
+
+# 採用技術・スタック
+
+## マークアップ
+* HTML5
+
+## スタイリング
+* CSS3
+
+## レイアウト
+* Flexbox / CSS Grid
+About セクションの画像とテキストの交互配置、Menu & Plan のPC向け3列レイアウトなどに採用。
+
+## インタラクション
+* JavaScript (バニラ)
+ハンバーガーメニューの開閉機能。外部ライブラリに依存しない軽量化を意識。
+
+## デザイン
+* モバイルファースト
+スマートフォンでの視認性・操作性を最優先した設計。
