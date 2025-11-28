@@ -20,6 +20,10 @@
     --text-color: #333;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #fff;
     color: var(--text-color);
